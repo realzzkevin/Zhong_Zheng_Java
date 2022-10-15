@@ -6,10 +6,10 @@ import javax.validation.constraints.NotNull;
 public class MathSolution {
 
     @NotNull(message = "operand1 cannot be null")
-    @Digits(integer = 10, fraction = 0, message = "invalid input")
+    @Digits(integer = 9, fraction = 0, message = "operand 1 has too many digits")
     private Integer operand1;
     @NotNull(message = "operand2 cannot be null")
-    @Digits(integer = 10, fraction = 0, message = "invalid Input")
+    @Digits(integer = 9, fraction = 0, message = "operand 2 has too many digits")
     private Integer operand2;
     private String operation;
     private int answer;

@@ -19,7 +19,7 @@ import java.util.List;
 
 @RestControllerAdvice
 public class ControllerExceptionHandler {
-
+    //Customized Exception Handler for javax.validation
     @ExceptionHandler(value = {MethodArgumentNotValidException.class})
     @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
     public ResponseEntity<List<CustomErrorResponse>> newResponseErrors(MethodArgumentNotValidException e) {
