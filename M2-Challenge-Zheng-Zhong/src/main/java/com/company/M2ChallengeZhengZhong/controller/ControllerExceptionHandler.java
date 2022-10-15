@@ -1,6 +1,5 @@
 package com.company.M2ChallengeZhengZhong.controller;
 
-import com.company.M2ChallengeZhengZhong.exception.ArgumentNotFoundException;
 import com.company.M2ChallengeZhengZhong.model.CustomErrorResponse;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import org.springframework.http.HttpStatus;
@@ -38,7 +37,7 @@ public class ControllerExceptionHandler {
         ResponseEntity<List<CustomErrorResponse>> responseEntity = new ResponseEntity<>(errorResponseList, HttpStatus.UNPROCESSABLE_ENTITY);
         return responseEntity;
     }
-
+    //Handle out of range exception for month API
     @ExceptionHandler(value = {IllegalArgumentException.class})
     @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
     public ResponseEntity<CustomErrorResponse> outOfRangeException(IllegalArgumentException e) {
@@ -49,7 +48,7 @@ public class ControllerExceptionHandler {
         ResponseEntity<CustomErrorResponse> responseEntity = new ResponseEntity<>(error, status422);
         return responseEntity;
     }
-
+    //Handle divide By Zero Exception
     @ExceptionHandler(value = {ArithmeticException.class})
     @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
     public ResponseEntity<CustomErrorResponse> dividedByZeroException(ArithmeticException e) {
@@ -61,17 +60,6 @@ public class ControllerExceptionHandler {
         return responseEntity;
     }
 
-//    @ExceptionHandler(value = {ArgumentNotFoundException.class})
-//    @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
-//    public ResponseEntity<CustomErrorResponse> argumentNotFoundException(ArgumentNotFoundException e) {
-//        HttpStatus status422 = HttpStatus.UNPROCESSABLE_ENTITY;
-//        CustomErrorResponse error = new CustomErrorResponse(status422.toString(), e.getMessage());
-//        error.setStatus(status422.value());
-//        error.setTimeStamp(LocalDateTime.now());
-//        ResponseEntity<CustomErrorResponse> responseEntity = new ResponseEntity<>(error, status422);
-//        return responseEntity;
-//    }
-
     @ExceptionHandler(value = {InvalidFormatException.class})
     @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
     public ResponseEntity<CustomErrorResponse> invalidFormatException(InvalidFormatException e) {
@@ -82,7 +70,7 @@ public class ControllerExceptionHandler {
         ResponseEntity<CustomErrorResponse> responseEntity = new ResponseEntity<>(error, status422);
         return responseEntity;
     }
-
+    //handle incomplete Json object
     @ExceptionHandler(value = {HttpMessageNotReadableException.class})
     @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
     public ResponseEntity<CustomErrorResponse> ArgumentNotReadableException(HttpMessageNotReadableException e) {
@@ -93,6 +81,4 @@ public class ControllerExceptionHandler {
         ResponseEntity<CustomErrorResponse> responseEntity = new ResponseEntity<>(error, status422);
         return responseEntity;
     }
-
-
 }
