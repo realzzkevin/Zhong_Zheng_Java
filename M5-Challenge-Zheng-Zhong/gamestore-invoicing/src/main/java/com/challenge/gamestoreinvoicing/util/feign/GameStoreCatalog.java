@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "game-store-catalog")
+@FeignClient(name = "gamestore-catalog")
 public interface GameStoreCatalog {
     //get console by Id
     @RequestMapping(value = "/console/{id}", method = RequestMethod.GET)

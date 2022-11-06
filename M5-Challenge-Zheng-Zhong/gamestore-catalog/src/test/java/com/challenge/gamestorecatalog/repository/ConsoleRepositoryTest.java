@@ -1,6 +1,7 @@
 package com.challenge.gamestorecatalog.repository;
 
 import com.challenge.gamestorecatalog.model.Console;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class ConsoleRepositoryTest {
     @Autowired
     ConsoleRepository consoleRepository;
 
-    @org.junit.Before
+    @Before
     public void setUp() throws Exception {
         consoleRepository.deleteAll();
     }

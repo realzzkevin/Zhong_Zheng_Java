@@ -33,7 +33,7 @@ public class GameControllerTest {
     private MockMvc mockMvc;
 
     // The aim of this unit test is to test the controller and NOT the service layer.
-    // Therefore mock the service layer.
+    // Therefore， mock the service layer.
     @MockBean
     private GameStoreCatalogServiceLayer storeServiceLayer;
 
@@ -150,7 +150,7 @@ public class GameControllerTest {
 
         //Mock call to service layer...
         //Nothing to mock!
-        //Checking checking for the correct response status code
+        //Checking for the correct response status code
         doNothing().when(storeServiceLayer).updateGame(inGameViewModel);
 
         //Act & Assert
@@ -180,7 +180,7 @@ public class GameControllerTest {
 
         //Mock call to service layer...
         //Nothing to mock!
-        //Checking checking for the correct response status code
+        //Checking for the correct response status code
         doNothing().when(storeServiceLayer).deleteGame(62);
 
         //Act & Assert
@@ -392,7 +392,7 @@ public class GameControllerTest {
         savedGameViewModel3.setQuantity(5);
         savedGameViewModel3.setId(77);
 
-        List<GameViewModel> foundList = new ArrayList();
+        List<GameViewModel> foundList = new ArrayList<>();
         foundList.add(savedGameViewModel1);
         foundList.add(savedGameViewModel3);
 
@@ -753,19 +753,19 @@ public class GameControllerTest {
     @Test
     public void shouldFailFindGamesWithInvalidData() throws Exception {
 
-        //perform the call, pass argutments (path variables & requestBody), use objectMapper to convert objects
+        //perform the call, pass arguments (path variables & requestBody), use objectMapper to convert objects
         // from/to JSON format.
 
         //Arrange
         //invalid id...
-        GameViewModel inGameViewModel = new GameViewModel();
-        inGameViewModel.setTitle("something");
-        inGameViewModel.setEsrbRating("E10+");
-        inGameViewModel.setDescription("Puzzles and Math");
-        inGameViewModel.setPrice(new BigDecimal("23.99"));
-        inGameViewModel.setStudio("Xbox Game Studios");
-        inGameViewModel.setQuantity(5);
-        inGameViewModel.setId(77);
+//        GameViewModel inGameViewModel = new GameViewModel();
+//        inGameViewModel.setTitle("something");
+//        inGameViewModel.setEsrbRating("E10+");
+//        inGameViewModel.setDescription("Puzzles and Math");
+//        inGameViewModel.setPrice(new BigDecimal("23.99"));
+//        inGameViewModel.setStudio("Xbox Game Studios");
+//        inGameViewModel.setQuantity(5);
+//        inGameViewModel.setId(77);
 
         //So we are mocking (not executing the service layer) since we are testing the controller here.
         // Remember: we are testing the code of the CONTROLLER methods.
