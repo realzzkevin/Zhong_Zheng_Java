@@ -167,14 +167,7 @@ public class GameStoreInvoicingServiceLayerTest {
 
     private void setUpCatalogFeighMock() {
         catalog = mock(GameStoreCatalog.class);
-
-//        TShirtViewModel newTShirt1 = new TShirtViewModel();
-//        newTShirt1.setSize("Medium");
-//        newTShirt1.setColor("Blue");
-//        newTShirt1.setDescription("V-Neck");
-//        newTShirt1.setPrice(new BigDecimal("19.99"));
-//        newTShirt1.setQuantity(5);
-
+        
         TShirtViewModel savedTShirt1 = new TShirtViewModel();
         savedTShirt1.setId(54);
         savedTShirt1.setSize("Medium");
@@ -182,20 +175,13 @@ public class GameStoreInvoicingServiceLayerTest {
         savedTShirt1.setDescription("V-Neck");
         savedTShirt1.setPrice(new BigDecimal("19.99"));
         savedTShirt1.setQuantity(5);
-//        doReturn(savedTShirt1).when(catalog).addTshirt(newTShirt1);
+
         doReturn(savedTShirt1).when(catalog).getTShirtById(54L);
     }
 
     //Testing Invoice Operations...
     @Test
     public void shouldCreateFindInvoice() {
-//        TShirtViewModel tShirt = new TShirtViewModel();
-//        tShirt.setSize("Medium");
-//        tShirt.setColor("Blue");
-//        tShirt.setDescription("V-Neck");
-//        tShirt.setPrice(new BigDecimal("19.99"));
-//        tShirt.setQuantity(5);
-//        tShirt = service.createTShirt(tShirt);
 
         InvoiceViewModel invoiceViewModel = new InvoiceViewModel();
         invoiceViewModel.setName("John Jake");
@@ -375,8 +361,6 @@ public class GameStoreInvoicingServiceLayerTest {
 
     @Test(expected = NullPointerException.class)
     public void shouldFailWhenCreateInvoiceInvalidInvoiceMV() {
-
-//        InvoiceViewModel invoiceViewModel = null;
 
         service.createInvoice(null);
     }

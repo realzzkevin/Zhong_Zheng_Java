@@ -841,13 +841,6 @@ public class GameStoreCatalogServiceLayerTest {
         allTtShirts.add(savedTShirt3);
         tShirtsBySize.add(savedTShirt3);
 
-//        TShirt newTShirt4 = new TShirt();
-//        newTShirt4.setSize("Small");
-//        newTShirt4.setColor("Red");
-//        newTShirt4.setDescription("sleeveless");
-//        newTShirt4.setPrice(new BigDecimal("400"));
-//        newTShirt4.setQuantity(30);
-
         TShirt savedTShirt4 = new TShirt();
         savedTShirt4.setId(99);
         savedTShirt4.setSize("Small");
